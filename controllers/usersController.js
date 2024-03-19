@@ -64,7 +64,7 @@ const register = async (req, res) => {
     });
 
     // Send the token in the response
-    res.json({ message: "User registred with success", token });
+    res.json({ access_token: token });
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: "Internal Server Error" });
@@ -137,7 +137,7 @@ const login = async (req, res) => {
       role: user.role,
     });
 
-    res.json({ message: "Login successful", token });
+    res.json({ access_token: token });
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: "Internal Server Error" });
